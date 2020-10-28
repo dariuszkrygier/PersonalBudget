@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>370</x>
+      <y>500</y>
+      <w>280</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>PersonalBudget
+--
+- UserManager : userManager
+- BudgetManager : *budgetManager
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>130</x>
+      <y>280</y>
+      <w>220</w>
+      <h>170</h>
+    </coordinates>
+    <panel_attributes>UserManager
+--
+- loggedInUserId : Integer
+- users : vector &lt;User&gt;
+--
++ registerUser() : void
++ loginUser() : void
++ loginExists() : Bool
++ changeUserPassword() : void
++ LogoutUser(): void
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>170</x>
+      <y>90</y>
+      <w>150</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>User
+--
+- id : Integer
+- name : String
+- surname : String
+- login : String
+- password : String
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>360</x>
+      <y>40</y>
+      <w>230</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>UsersFile
+--
+- USERS_FILE_NAME : String
+--
+addUserToFile() : void
+loadUsersFromFile() : &lt;vector&gt; User
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>650</x>
+      <y>30</y>
+      <w>310</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>IncomesFile
+--
+- INCOMES_FILE_NAME : String
+--
+addIncomesToFile() : void
+loadIncomesFromFile() : &lt;vector&gt; Budget
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>500</x>
+      <y>140</y>
+      <w>280</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>ExpensesFile
+--
+- EXPENSES_FILE_NAME : String
+--
+addExpensesToFile() : void
+loadExpensesFromFile() : &lt;vector&gt; Budget
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>830</x>
+      <y>240</y>
+      <w>190</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>Budget
+--
+- income : Float
+- expense : Float
+- date : String
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>700</x>
+      <y>390</y>
+      <w>360</w>
+      <h>170</h>
+    </coordinates>
+    <panel_attributes>BudgetManager
+--
+- LOGGED_USER_ID : Integer
+- budget : vector &lt;Budget&gt;
+--
++ addIncome() : void
++ addExpense() : void
++ displayBalanceSheetFromCurrentMonth() : void
++ displayBalanceSheetFromPreviousMonth() : void
++ displayBalanceSheetFromChosenTimePeriod() : void
++ sortDates() : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>420</x>
+      <y>270</y>
+      <w>290</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>AuxiliaryMethods
+--
+--
++ convertCommaToDot(): void
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
