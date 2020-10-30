@@ -1,4 +1,46 @@
 # depslib dependency file v1.0
-1603974726 source:c:\users\dariusz krygier\documents\github\personalbudget\personalbudget\main.cpp
+1603992692 source:c:\users\dariusz krygier\documents\github\personalbudget\personalbudget\main.cpp
 	<iostream>
+	"PersonalBudget.h"
+	"AuxiliaryMethods.h"
+
+1603986476 source:c:\users\dariusz krygier\documents\github\personalbudget\personalbudget\user.cpp
+	"User.h"
+
+1603975249 c:\users\dariusz krygier\documents\github\personalbudget\personalbudget\user.h
+	<iostream>
+
+1603992284 source:c:\users\dariusz krygier\documents\github\personalbudget\personalbudget\auxiliarymethods.cpp
+	"AuxiliaryMethods.h"
+	<sstream>
+
+1603992284 c:\users\dariusz krygier\documents\github\personalbudget\personalbudget\auxiliarymethods.h
+	<iostream>
+	<sstream>
+	<fstream>
+	<algorithm>
+
+1603992771 c:\users\dariusz krygier\documents\github\personalbudget\personalbudget\usermanager.h
+	<iostream>
+	<string>
+	<vector>
+	<windows.h>
+	<fstream>
+	<sstream>
+	"User.h"
+
+1603987057 source:c:\users\dariusz krygier\documents\github\personalbudget\personalbudget\usermanager.cpp
+	"UserManager.h"
+	"AuxiliaryMethods.h"
+
+1603992284 source:c:\users\dariusz krygier\documents\github\personalbudget\personalbudget\personalbudget.cpp
+	"PersonalBudget.h"
+
+1603992284 c:\users\dariusz krygier\documents\github\personalbudget\personalbudget\personalbudget.h
+	<iostream>
+	<vector>
+	<windows.h>
+	<fstream>
+	<sstream>
+	"UserManager.h"
 

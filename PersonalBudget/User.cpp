@@ -10,6 +10,9 @@ void User :: setName (string newName) {
 void User :: setSurname (string newSurname) {
     surname = newSurname;
 }
+void User :: setLogin (string newLogin) {
+    login = newLogin;
+}
 void User :: setPassword (string newPassword) {
     password = newPassword;
 }
