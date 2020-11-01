@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1603992692 source:c:\users\dariusz krygier\documents\github\personalbudget\personalbudget\main.cpp
+1604271663 source:c:\users\dariusz krygier\documents\github\personalbudget\personalbudget\main.cpp
 	<iostream>
 	"PersonalBudget.h"
 	"AuxiliaryMethods.h"
@@ -10,37 +10,64 @@
 1603975249 c:\users\dariusz krygier\documents\github\personalbudget\personalbudget\user.h
 	<iostream>
 
-1603992284 source:c:\users\dariusz krygier\documents\github\personalbudget\personalbudget\auxiliarymethods.cpp
+1604066613 source:c:\users\dariusz krygier\documents\github\personalbudget\personalbudget\auxiliarymethods.cpp
 	"AuxiliaryMethods.h"
 	<sstream>
 
-1603992284 c:\users\dariusz krygier\documents\github\personalbudget\personalbudget\auxiliarymethods.h
+1604066613 c:\users\dariusz krygier\documents\github\personalbudget\personalbudget\auxiliarymethods.h
 	<iostream>
 	<sstream>
 	<fstream>
 	<algorithm>
 
-1603992771 c:\users\dariusz krygier\documents\github\personalbudget\personalbudget\usermanager.h
+1604270842 c:\users\dariusz krygier\documents\github\personalbudget\personalbudget\usermanager.h
 	<iostream>
 	<string>
 	<vector>
 	<windows.h>
-	<fstream>
 	<sstream>
 	"User.h"
+	"UsersFile.h"
 
-1603987057 source:c:\users\dariusz krygier\documents\github\personalbudget\personalbudget\usermanager.cpp
+1604268260 source:c:\users\dariusz krygier\documents\github\personalbudget\personalbudget\usermanager.cpp
 	"UserManager.h"
 	"AuxiliaryMethods.h"
 
-1603992284 source:c:\users\dariusz krygier\documents\github\personalbudget\personalbudget\personalbudget.cpp
+1604270340 source:c:\users\dariusz krygier\documents\github\personalbudget\personalbudget\personalbudget.cpp
 	"PersonalBudget.h"
 
-1603992284 c:\users\dariusz krygier\documents\github\personalbudget\personalbudget\personalbudget.h
+1604271663 c:\users\dariusz krygier\documents\github\personalbudget\personalbudget\personalbudget.h
 	<iostream>
 	<vector>
 	<windows.h>
 	<fstream>
 	<sstream>
 	"UserManager.h"
+
+1604271714 c:\users\dariusz krygier\documents\github\personalbudget\personalbudget\usersfile.h
+	<iostream>
+	<fstream>
+	<vector>
+	<string>
+	"User.h"
+	"AuxiliaryMethods.h"
+	<stdio.h>
+	"Markup.h"
+
+1303067212 source:c:\users\dariusz krygier\documents\github\personalbudget\personalbudget\markup.cpp
+	<stdio.h>
+	"Markup.h"
+	<errno.h>
+	<iconv.h>
+	<windows.h>
+	<mbstring.h>
+
+1303067212 c:\users\dariusz krygier\documents\github\personalbudget\personalbudget\markup.h
+	<stdlib.h>
+	<string.h>
+	<string>
+	<afx.h>
+
+1604271190 source:c:\users\dariusz krygier\documents\github\personalbudget\personalbudget\usersfile.cpp
+	"UsersFile.h"
 

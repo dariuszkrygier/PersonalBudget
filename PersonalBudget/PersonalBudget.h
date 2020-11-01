@@ -8,12 +8,13 @@
 
 using namespace std;
 
-class PersonalBudget
-{
-UserManager userManager;
+class PersonalBudget {
+    UserManager userManager;
 
 public:
+    PersonalBudget(string usersFileName): userManager (usersFileName) {
 
+    };
 
     void registerUser();
     void loginUser();

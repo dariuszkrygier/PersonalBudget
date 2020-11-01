@@ -5,8 +5,9 @@ void UserManager :: registerUser() {
     User user = specifyNewUserData();
 
     users.push_back(user);
+    //UsersFile usersFile;
 
-    //plikZUzytkownikami.dopiszUzytkownikaDoPliku(user);
+    usersFile.saveUserToFile(user);
 
     cout << endl << "Konto zalozono pomyslnie" << endl << endl;
     system("pause");

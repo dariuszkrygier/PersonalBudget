@@ -1,13 +1,13 @@
 #include "AuxiliaryMethods.h"
 #include <sstream>
-/*
-string AuxiliaryMethods :: konwerjsaIntNaString(int liczba) {
+
+string AuxiliaryMethods :: convertIntToString(int number) {
     ostringstream ss;
-    ss << liczba;
+    ss << number;
     string str = ss.str();
     return str;
 }
-*/
+
 string AuxiliaryMethods :: loadLine() {
     string input = "";
     getline(cin, input);

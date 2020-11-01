@@ -4,18 +4,18 @@
 
 using namespace std;
 
-//char chooseOptionsFromMainMenu();
+char chooseOptionsFromMainMenu();
 
 int main() {
-    PersonalBudget personalBudget;
+    PersonalBudget personalBudget("users.xml");
     //userManager.registerUser();
-    personalBudget.registerUser();
+    //personalBudget.registerUser();
     //personalBudget.wypiszWszystkichUzytkownikow();
-    personalBudget.loginUser();
-    personalBudget.changePassword();
-    personalBudget.logoutUser();
+    //personalBudget.loginUser();
+    //personalBudget.changePassword();
+    //personalBudget.logoutUser();
 
- /*char choice;
+ char choice;
    while(true)
    {
         if (!personalBudget.isUserLoggedIn())
@@ -41,11 +41,12 @@ int main() {
         else {
                 }
 
-*/
-    return 0;
+
+
 }
-//}
-/*
+return 0;
+}
+
 char chooseOptionsFromMainMenu()
 {
     char choice;
@@ -62,4 +63,4 @@ char chooseOptionsFromMainMenu()
 
     return choice;
 }
-*/
+

@@ -1,32 +1,35 @@
+#ifndef USERMANAGER_H
+#define USERMANAGER_H
 #include <iostream>
 #include <string>
 #include <vector>
 #include <windows.h>
-#include <fstream>
 #include <sstream>
 #include "User.h"
-//#include "PlikZUzytkownikami.h"
+#include "UsersFile.h"
+
+
 using namespace std;
 
 class UserManager
 {
     int loggedUserId;
     vector <User> users;
+    UsersFile usersFile;
 
     User specifyNewUserData();
     int getNewUserId();
     bool loginExists (string login);
-   // UsersFile usersFile;
+
 
 
 public:
-    UserManager ()//(string usersFileName) : usersFile (usersFileName) {
+ UserManager (string usersFileName) : usersFile (usersFileName)
     {
-         loggedUserId=0;
-    }
 
-    //users = usersFile.loadUsersFromFile();
-   // };
+         loggedUserId=0;
+    users = usersFile.loadUsersFromFile();
+   };
     void registerUser();
     int loginUser();
     void changePassword();
@@ -36,3 +39,5 @@ public:
     void wypiszWszystkichUzytkownikow();
 
 };
+
+#endif

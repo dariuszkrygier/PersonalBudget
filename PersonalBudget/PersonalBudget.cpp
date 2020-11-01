@@ -22,5 +22,5 @@
     }
     bool PersonalBudget :: isUserLoggedIn()
     {
-        userManager.isUserLoggedIn();
+        return userManager.isUserLoggedIn();
     }
