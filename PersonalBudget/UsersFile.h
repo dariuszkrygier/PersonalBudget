@@ -20,7 +20,7 @@ public:
     UsersFile(string USERSFILENAME) : usersFileName (USERSFILENAME) {};
     vector <User> loadUsersFromFile();
     void saveUserToFile(User user);
-    //void zapiszWszystkichUzytkownikowDoPliku(vector <Uzytkownik> &uzytkownicy);
+    void saveAllUsersToFile(vector <User> &users);
 };
 
 #endif

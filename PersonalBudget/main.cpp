@@ -5,25 +5,24 @@
 using namespace std;
 
 char chooseOptionsFromMainMenu();
+char chooseOptionFromUsersMenu();
 
 int main() {
     PersonalBudget personalBudget("users.xml");
     //userManager.registerUser();
     //personalBudget.registerUser();
-    //personalBudget.wypiszWszystkichUzytkownikow();
+    personalBudget.wypiszWszystkichUzytkownikow();
+    system("pause");
     //personalBudget.loginUser();
     //personalBudget.changePassword();
     //personalBudget.logoutUser();
 
- char choice;
-   while(true)
-   {
-        if (!personalBudget.isUserLoggedIn())
-        {
+    char choice;
+    while(true) {
+        if (!personalBudget.isUserLoggedIn()) {
             choice = chooseOptionsFromMainMenu();
 
-            switch (choice)
-            {
+            switch (choice) {
             case '1':
                 personalBudget.registerUser();
                 break;
@@ -33,34 +32,76 @@ int main() {
             case '9':
                 exit(0);
             default:
-                cout << endl << "Nie ma takiej opcji w menu." << endl << endl;
+                cout << endl << "No such option in menu." << endl << endl;
                 system("pause");
                 break;
             }
+        } else {
+            choice = chooseOptionFromUsersMenu();
+             switch (choice) {
+           // case '1':
+             //   personalBudget.addIncome();
+              //  break;
+         //   case '2':
+           //     personalBudget.addExpense();
+           //     break;
+           // case '3':
+            //    personalBudget.showBalanceFromTheCurrentMonth();
+             //   break;
+        //    case '4':
+          //      personalBudget.showBalanceFromThePreviousMonth();
+           //     break;
+          //  case '5':
+          //      personalBudget.showBalanceFromPeriod();
+           //     break;
+            case '6':
+                personalBudget.changePassword();
+                break;
+            case '7':
+                personalBudget.logoutUser();
+                break;
+            }
         }
-        else {
-                }
 
 
 
-}
-return 0;
+    }
+    return 0;
 }
 
-char chooseOptionsFromMainMenu()
-{
+char chooseOptionsFromMainMenu() {
     char choice;
 
     system("cls");
-    cout << "    >>> MENU  GLOWNE <<<" << endl;
+    cout << "    >>> MAIN  MENU <<<" << endl;
     cout << "---------------------------" << endl;
-    cout << "1. Rejestracja" << endl;
-    cout << "2. Logowanie" << endl;
-    cout << "9. Koniec programu" << endl;
+    cout << "1. Register" << endl;
+    cout << "2. Log in" << endl;
+    cout << "9. Exit" << endl;
     cout << "---------------------------" << endl;
-    cout << "Twoj wybor: ";
+    cout << "Your choice: ";
     choice = AuxiliaryMethods :: loadChar();
 
     return choice;
 }
 
+char chooseOptionFromUsersMenu() {
+    char choice;
+
+    system("cls");
+    cout << "             >>> USER'S MENU <<<" << endl;
+    cout << "--------------------------------------------" << endl;
+    cout << "1. Add income" << endl;
+    cout << "2. Add expense" << endl;
+    cout << "3. Show balance from current month" << endl;
+    cout << "4. Show balance from previous month" << endl;
+    cout << "5. Show balance from selected period of time" << endl;
+    cout << "--------------------------------------------" << endl;
+    cout << "6. Change password" << endl;
+    cout << "7. Log out" << endl;
+    cout << "---------------------------" << endl;
+    cout << "Your choice: ";
+    choice = AuxiliaryMethods :: loadChar();
+
+    return choice;
+}

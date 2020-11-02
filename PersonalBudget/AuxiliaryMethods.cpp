@@ -41,7 +41,7 @@ char AuxiliaryMethods :: loadChar() {
             sign = input[0];
             break;
         }
-        cout << "To nie jest pojedynczy znak. Wpisz ponownie." << endl;
+        cout << "This is not a single char, please try again." << endl;
     }
     return sign;
 }
