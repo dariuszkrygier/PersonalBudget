@@ -61,16 +61,18 @@ void UsersFile :: saveAllUsersToFile(vector <User> &users) {
     xml.AddElem("Users");
     xml.FindElem();
     xml.IntoElem();
-    xml.AddElem ("User");
-    xml.IntoElem();
+
     vector <User>::iterator itrEnd = --users.end();
     for (vector <User>::iterator itr = users.begin(); itr != users.end(); itr++) {
+        xml.AddElem ("User");
+        xml.IntoElem();
         xml.AddElem( "Id", itr -> getId() );
         xml.AddElem( "Name", itr -> getName() );
         xml.AddElem( "Surname", itr -> getSurname() );
         xml.AddElem( "Login", itr -> getLogin() );
         xml.AddElem( "Password", itr -> getPassword() );
         xml.Save (usersFileName);
+        xml.OutOfElem();
     }
 
 }
