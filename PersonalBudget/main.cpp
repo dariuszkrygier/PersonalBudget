@@ -15,7 +15,7 @@ int main() {
     system("pause");
     //personalBudget.loginUser();
     //personalBudget.changePassword();
-    //personalBudget.logoutUser();
+    //personalBudget.addIncome();
 
     char choice;
     while(true) {
@@ -39,9 +39,9 @@ int main() {
         } else {
             choice = chooseOptionFromUsersMenu();
              switch (choice) {
-           // case '1':
-             //   personalBudget.addIncome();
-              //  break;
+           case '1':
+             personalBudget.addIncome();
+              break;
          //   case '2':
            //     personalBudget.addExpense();
            //     break;

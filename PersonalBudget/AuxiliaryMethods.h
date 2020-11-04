@@ -4,6 +4,8 @@
 #include <sstream>
 #include <fstream>
 #include <algorithm>
+#include<cmath>
+#include <ctime>
 
 using namespace std;
 
@@ -18,6 +20,8 @@ public:
     //static int wczytajLiczbeCalkowita();
     //static void usunPlik(string nazwaPlikuZRozszerzeniem);
     //static void zmienNazwePliku(string staraNazwa, string nowaNazwa);
+    static string setCurrentDateOfTheOperation();
+    static string setUsersDateOfTheOperation();
 
 };
 

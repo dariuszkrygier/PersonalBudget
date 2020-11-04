@@ -1,6 +1,7 @@
 #include "AuxiliaryMethods.h"
 #include <sstream>
 
+
 string AuxiliaryMethods :: convertIntToString(int number) {
     ostringstream ss;
     ss << number;
@@ -73,3 +74,45 @@ void AuxiliaryMethods :: zmienNazwePliku(string staraNazwa, string nowaNazwa) {
         cout << "Nazwa pliku nie zostala zmieniona." << staraNazwa << endl;
 }
 */
+
+string AuxiliaryMethods::setCurrentDateOfTheOperation() {
+    time_t t = time(NULL);
+ tm* tPtr = localtime(&t);
+
+ int year, month, day;
+ string yearString, monthString, dayString, date;
+
+
+
+year = (tPtr->tm_year)+1900;
+month = (tPtr->tm_mon)+1;
+day = (tPtr->tm_mday);
+
+yearString = convertIntToString(year);
+monthString = convertIntToString(year);
+if (monthString.length() == 1)
+{
+    monthString = "0" + monthString;
+}
+dayString = convertIntToString(day);
+if (dayString.length() == 1)
+{
+    dayString = "0" + dayString;
+}
+
+  date = yearString + "-" + monthString + "-" + dayString;
+
+    return date;
+}
+
+string AuxiliaryMethods :: setUsersDateOfTheOperation() {
+    cout << "Please enter the date (yyyy-mm-dd): ";
+    string date;
+    date = AuxiliaryMethods :: loadLine();
+    if (date.length() < 10 || date.length() > 10) {
+        date = "0";
+        return date;
+    }
+
+        return date;
+}
