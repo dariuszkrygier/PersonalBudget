@@ -6,6 +6,7 @@
 #include "Income.h"
 #include "Expense.h"
 #include "IncomesFile.h"
+#include "ExpensesFile.h"
 #include "AuxiliaryMethods.h"
 #include <vector>
 
@@ -15,16 +16,21 @@ class BudgetManager {
     const int LOGGED_IN_USER_ID;
     vector <Income> incomes;
     IncomesFile incomesFile;
-    //vector <Expense> expenses;
+    vector <Expense> expenses;
+    ExpensesFile expensesFile;
     AuxiliaryMethods auxiliaryMethods;
     char chooseTypeOfDateFromMenu();
     string setTheDateOfTheFinancialOperation (char choice);
-    Income addDetailsOfTheIncome(string dateOfTheExpense);
+    Income addDetailsOfTheIncome(string dateOfTheIcome);
+    Expense addDetailsOfTheExpense(string dateOfTheExpense);
     double checkFormatAndChangeIntoDouble (string amount);
 
+
 public:
-    BudgetManager (string incomesFileName, int loggedInUserId) : incomesFile (incomesFileName), LOGGED_IN_USER_ID(loggedInUserId) {
+    BudgetManager (string incomesFileName, string expensesFileName, int loggedInUserId) :
+        incomesFile (incomesFileName), expensesFile(expensesFileName), LOGGED_IN_USER_ID(loggedInUserId) {
         incomes = incomesFile.loadIncomesOfLoggedInUserFromFile(LOGGED_IN_USER_ID);
+        expenses = expensesFile.loadExpensesOfLoggedInUserFromFile(LOGGED_IN_USER_ID);
     };
     void addIncome();
     void addExpense();

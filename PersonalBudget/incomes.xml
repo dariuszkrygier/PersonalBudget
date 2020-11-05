@@ -41,4 +41,11 @@
 <Item>allegro</Item>
 <Amount>123.321</Amount>
 </Income>
+<Income>
+<IncomeId>7</IncomeId>
+<UserId>1</UserId>
+<Date>2020-01-01</Date>
+<Item>dsds</Item>
+<Amount>123.123</Amount>
+</Income>
 </Incomes>
