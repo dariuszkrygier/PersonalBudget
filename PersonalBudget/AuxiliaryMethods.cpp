@@ -89,7 +89,7 @@ string AuxiliaryMethods::setCurrentDateOfTheOperation() {
     day = (tPtr->tm_mday);
 
     yearString = convertIntToString(year);
-    monthString = convertIntToString(year);
+    monthString = convertIntToString(month);
     if (monthString.length() == 1) {
         monthString = "0" + monthString;
     }
