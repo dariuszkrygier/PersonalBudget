@@ -8,7 +8,7 @@
     {
         userManager.loginUser();
          if (userManager.isUserLoggedIn()) {
-        budgetManager = new BudgetManager (INCOMES_FILE_NAME, userManager.getLoggedinUserId());
+        budgetManager = new BudgetManager (INCOMES_FILE_NAME, EXPENSES_FILE_NAME, userManager.getLoggedinUserId());
     }
     }
     void PersonalBudget :: changePassword()
@@ -31,5 +31,9 @@
     }
     void PersonalBudget :: addIncome()
     {
-        budgetManager->addIncome();
+        budgetManager -> addIncome();
+    }
+    void PersonalBudget :: addExpense()
+    {
+        budgetManager -> addExpense();
     }

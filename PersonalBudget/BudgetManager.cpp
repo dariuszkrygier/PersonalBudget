@@ -20,6 +20,26 @@ void BudgetManager :: addIncome() {
     }
 }
 
+void BudgetManager :: addExpense() {
+    Expense expense;
+    system("cls");
+    char choice;
+    string date;
+    choice = chooseTypeOfDateFromMenu();
+    date = setTheDateOfTheFinancialOperation(choice);
+    if (date == "0") {
+        cout << "The date is incorrect." << endl;
+        system("pause");
+        return;
+    } else {
+        expense = addDetailsOfTheExpense(date);
+        expenses.push_back(expense);
+        expensesFile.saveExpenseToFile(expense);
+        cout << "Expense has been added." << endl;
+        system("pause");
+    }
+}
+
 char BudgetManager :: chooseTypeOfDateFromMenu() {
 
     char choice;
@@ -55,6 +75,29 @@ Income BudgetManager :: addDetailsOfTheIncome(string dateOfTheIncome) {
     income.setAmount(amountOfIncomeAsDouble);
 
     return income;
+}
+
+Expense BudgetManager :: addDetailsOfTheExpense(string dateOfTheExpense) {
+    Expense expense;
+    string nameOfTheExpense;
+    string amountOfExpense;
+
+    expense.setExpenseId(expensesFile.getTheLastExpenseId() + 1);
+
+    expense.setUserId(LOGGED_IN_USER_ID);
+
+    expense.setDate(dateOfTheExpense);
+
+    cout << "Enter name of the expense: ";
+    nameOfTheExpense = AuxiliaryMethods :: loadLine();
+    expense.setItem(nameOfTheExpense);
+
+    cout << "Enter amount: ";
+    cin >> amountOfExpense;
+    double amountOfExpenseAsDouble = checkFormatAndChangeIntoDouble(amountOfExpense);
+    expense.setAmount(amountOfExpenseAsDouble);
+
+    return expense;
 }
 
 double BudgetManager :: checkFormatAndChangeIntoDouble (string amount) {

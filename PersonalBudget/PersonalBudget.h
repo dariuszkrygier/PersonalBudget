@@ -13,11 +13,12 @@ class PersonalBudget {
     UserManager userManager;
     BudgetManager *budgetManager;
     const string INCOMES_FILE_NAME;
+    const string EXPENSES_FILE_NAME;
 
 
 public:
-    PersonalBudget(string usersFileName, string incomesFileName) : userManager (usersFileName),
-        INCOMES_FILE_NAME (incomesFileName) {
+    PersonalBudget(string usersFileName, string incomesFileName, string expensesFileName) : userManager (usersFileName),
+        INCOMES_FILE_NAME (incomesFileName), EXPENSES_FILE_NAME (expensesFileName) {
         budgetManager = NULL;
     };
 
@@ -32,4 +33,5 @@ public:
     void wypiszWszystkichUzytkownikow();
     bool isUserLoggedIn();
     void addIncome();
+    void addExpense();
 };

@@ -1,28 +1,34 @@
-#ifndef EXPENSE_H
-#define EXPENSE_H
-#include <iostream>
+#include "Expense.h"
 
-using namespace std;
+void Expense :: setExpenseId(int newExpenseId) {
+    if (newExpenseId >= 0)
+        expenseId = newExpenseId;
+}
+void Expense :: setUserId(int newUserId) {
+    userId = newUserId;
+}
+void Expense :: setDate (string newDate) {
+    date = newDate;
+}
+void Expense :: setItem (string newItem) {
+    item = newItem;
+}
+void Expense :: setAmount (double newAmount) {
+    amount = newAmount;
+}
 
-class Expense {
-    int expenseId;
-    int userId;
-    string date;
-    string item;
-    double amount;
-
-public:
-    void setExpenseId (int newExpenseId);
-    void setUserId (int newUserId);
-    void setDate (string newDate);
-    void setItem (string newItem);
-    void setAmount (double newAmount);
-
-    int getExpenseId();
-    int getUserId();
-    string getDate();
-    string getItem();
-    double getAmount();
-};
-
-#endif
+int Expense :: getExpenseId() {
+    return expenseId;
+}
+int Expense :: getUserId() {
+    return userId;
+}
+string Expense :: getDate() {
+    return date;
+}
+string Expense :: getItem() {
+    return item;
+}
+double Expense :: getAmount() {
+    return amount;
+}

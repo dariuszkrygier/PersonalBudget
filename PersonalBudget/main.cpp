@@ -8,7 +8,7 @@ char chooseOptionsFromMainMenu();
 char chooseOptionFromUsersMenu();
 
 int main() {
-    PersonalBudget personalBudget("users.xml", "incomes.xml");
+    PersonalBudget personalBudget("users.xml", "incomes.xml", "expenses.xml");
     //userManager.registerUser();
     //personalBudget.registerUser();
     personalBudget.wypiszWszystkichUzytkownikow();
@@ -42,9 +42,9 @@ int main() {
            case '1':
              personalBudget.addIncome();
               break;
-         //   case '2':
-           //     personalBudget.addExpense();
-           //     break;
+            case '2':
+                personalBudget.addExpense();
+                break;
            // case '3':
             //    personalBudget.showBalanceFromTheCurrentMonth();
              //   break;
