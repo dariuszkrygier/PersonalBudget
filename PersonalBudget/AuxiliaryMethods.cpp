@@ -77,30 +77,28 @@ void AuxiliaryMethods :: zmienNazwePliku(string staraNazwa, string nowaNazwa) {
 
 string AuxiliaryMethods::setCurrentDateOfTheOperation() {
     time_t t = time(NULL);
- tm* tPtr = localtime(&t);
+    tm* tPtr = localtime(&t);
 
- int year, month, day;
- string yearString, monthString, dayString, date;
+    int year, month, day;
+    string yearString, monthString, dayString, date;
 
 
 
-year = (tPtr->tm_year)+1900;
-month = (tPtr->tm_mon)+1;
-day = (tPtr->tm_mday);
+    year = (tPtr->tm_year)+1900;
+    month = (tPtr->tm_mon)+1;
+    day = (tPtr->tm_mday);
 
-yearString = convertIntToString(year);
-monthString = convertIntToString(year);
-if (monthString.length() == 1)
-{
-    monthString = "0" + monthString;
-}
-dayString = convertIntToString(day);
-if (dayString.length() == 1)
-{
-    dayString = "0" + dayString;
-}
+    yearString = convertIntToString(year);
+    monthString = convertIntToString(year);
+    if (monthString.length() == 1) {
+        monthString = "0" + monthString;
+    }
+    dayString = convertIntToString(day);
+    if (dayString.length() == 1) {
+        dayString = "0" + dayString;
+    }
 
-  date = yearString + "-" + monthString + "-" + dayString;
+    date = yearString + "-" + monthString + "-" + dayString;
 
     return date;
 }
@@ -114,5 +112,23 @@ string AuxiliaryMethods :: setUsersDateOfTheOperation() {
         return date;
     }
 
-        return date;
+    return date;
+}
+
+string AuxiliaryMethods :: convertDoubleToString(double number) {
+    std::ostringstream strs;
+    strs << number;
+    std::string str = strs.str();
+    return str;
+}
+
+double AuxiliaryMethods :: convertStringToDouble(string numberAsString)
+{
+
+    stringstream ss;
+        double number;
+        ss << numberAsString;
+        ss >> number;
+
+    return number;
 }

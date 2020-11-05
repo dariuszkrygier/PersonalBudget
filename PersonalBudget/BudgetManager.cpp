@@ -14,7 +14,7 @@ void BudgetManager :: addIncome() {
     } else {
         income = addDetailsOfTheIncome(date);
         incomes.push_back(income);
-        //fileWithIncomes.addIncomeToFile(income);
+        incomesFile.saveIncomeToFile(income);
         cout << "Income has been added." << endl;
         system("pause");
     }
@@ -39,7 +39,7 @@ Income BudgetManager :: addDetailsOfTheIncome(string dateOfTheIncome) {
     string nameOfTheIncome;
     string amountOfIncome;
 
-//    income.setIncomeId(fileWithIncomes.getTheIdOfLastIncome() + 1);
+    income.setIncomeId(incomesFile.getTheLastIncomeId() + 1);
 
     income.setUserId(LOGGED_IN_USER_ID);
 

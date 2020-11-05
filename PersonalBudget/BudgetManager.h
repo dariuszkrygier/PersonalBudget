@@ -5,6 +5,7 @@
 #include <iomanip>
 #include "Income.h"
 #include "Expense.h"
+#include "IncomesFile.h"
 #include "AuxiliaryMethods.h"
 #include <vector>
 
@@ -13,6 +14,7 @@ using namespace std;
 class BudgetManager {
     const int LOGGED_IN_USER_ID;
     vector <Income> incomes;
+    IncomesFile incomesFile;
     //vector <Expense> expenses;
     AuxiliaryMethods auxiliaryMethods;
     char chooseTypeOfDateFromMenu();
@@ -21,7 +23,8 @@ class BudgetManager {
     double checkFormatAndChangeIntoDouble (string amount);
 
 public:
-    BudgetManager (int loggedInUserId) : LOGGED_IN_USER_ID(loggedInUserId) {
+    BudgetManager (string incomesFileName, int loggedInUserId) : incomesFile (incomesFileName), LOGGED_IN_USER_ID(loggedInUserId) {
+        incomes = incomesFile.loadIncomesOfLoggedInUserFromFile(LOGGED_IN_USER_ID);
     };
     void addIncome();
     void addExpense();

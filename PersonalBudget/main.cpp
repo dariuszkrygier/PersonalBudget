@@ -8,7 +8,7 @@ char chooseOptionsFromMainMenu();
 char chooseOptionFromUsersMenu();
 
 int main() {
-    PersonalBudget personalBudget("users.xml");
+    PersonalBudget personalBudget("users.xml", "incomes.xml");
     //userManager.registerUser();
     //personalBudget.registerUser();
     personalBudget.wypiszWszystkichUzytkownikow();

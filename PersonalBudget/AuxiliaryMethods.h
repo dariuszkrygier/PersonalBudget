@@ -22,6 +22,8 @@ public:
     //static void zmienNazwePliku(string staraNazwa, string nowaNazwa);
     static string setCurrentDateOfTheOperation();
     static string setUsersDateOfTheOperation();
+    static string convertDoubleToString(double number);
+    static double convertStringToDouble(string numberAsString);
 
 };
 
