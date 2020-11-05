@@ -34,4 +34,11 @@
 <Item>dede</Item>
 <Amount>123.11</Amount>
 </Income>
+<Income>
+<IncomeId>6</IncomeId>
+<UserId>1</UserId>
+<Date>2020-2020-05</Date>
+<Item>allegro</Item>
+<Amount>123.321</Amount>
+</Income>
 </Incomes>
