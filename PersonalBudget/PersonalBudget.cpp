@@ -38,6 +38,3 @@ void PersonalBudget :: displayBalanceSheetFromPreviousMonth() {
 void PersonalBudget :: displayBalanceSheetFromChosenTimePeriod() {
     budgetManager -> displayBalanceSheetFromChosenTimePeriod();
 }
-
-
-

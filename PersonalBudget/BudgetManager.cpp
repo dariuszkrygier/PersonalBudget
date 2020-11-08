@@ -422,10 +422,10 @@ double BudgetManager :: sumIncomesAndExpenses (double incomes, double expenses) 
 
 bool operator < ( const Income &i1, const Income &i2) {
     return AuxiliaryMethods :: convertStringToInt (AuxiliaryMethods :: removeChosenCharacterFromString (i1.getConstDate()))
-    < AuxiliaryMethods :: convertStringToInt (AuxiliaryMethods :: removeChosenCharacterFromString (i2.getConstDate()));
+           < AuxiliaryMethods :: convertStringToInt (AuxiliaryMethods :: removeChosenCharacterFromString (i2.getConstDate()));
 }
 
 bool operator < ( const Expense &e1, const Expense &e2) {
     return AuxiliaryMethods :: convertStringToInt (AuxiliaryMethods :: removeChosenCharacterFromString (e1.getConstDate()))
-    < AuxiliaryMethods :: convertStringToInt (AuxiliaryMethods :: removeChosenCharacterFromString (e2.getConstDate()));
+           < AuxiliaryMethods :: convertStringToInt (AuxiliaryMethods :: removeChosenCharacterFromString (e2.getConstDate()));
 }

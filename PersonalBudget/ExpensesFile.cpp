@@ -1,7 +1,6 @@
 #include "ExpensesFile.h"
 
-ExpensesFile :: ExpensesFile(string expensesFileName) : EXPENSES_FILE_NAME (expensesFileName)
-{
+ExpensesFile :: ExpensesFile(string expensesFileName) : EXPENSES_FILE_NAME (expensesFileName) {
     lastExpenseId = 0;
 }
 
@@ -38,8 +37,6 @@ vector <Expense> ExpensesFile :: loadExpensesOfLoggedInUserFromFile(int loggedIn
         expensesFile.OutOfElem();
     }
     return expenses;
-
-
 }
 
 int ExpensesFile :: getTheLastExpenseId() {
@@ -66,5 +63,4 @@ void ExpensesFile :: saveExpenseToFile(Expense expense) {
     expensesFile.AddElem( "Amount", AuxiliaryMethods :: convertDoubleToString (expense.getAmount()) );
     expensesFile.Save( EXPENSES_FILE_NAME );
     lastExpenseId++;
-
 }

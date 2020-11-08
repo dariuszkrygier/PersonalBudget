@@ -1,7 +1,6 @@
 #include "IncomesFile.h"
 
-IncomesFile :: IncomesFile(string incomesFileName) : INCOMES_FILE_NAME (incomesFileName)
-{
+IncomesFile :: IncomesFile(string incomesFileName) : INCOMES_FILE_NAME (incomesFileName) {
     lastIncomeId = 0;
 }
 
@@ -10,7 +9,6 @@ vector <Income> IncomesFile :: loadIncomesOfLoggedInUserFromFile(int loggedInUse
     vector <Income> incomes;
     CMarkup incomesFile;
     incomesFile.Load( INCOMES_FILE_NAME );
-    //xml.ResetPos();
 
     incomesFile.FindElem(); // root Incomes element
     incomesFile.IntoElem(); // inside Incomes
@@ -54,7 +52,6 @@ void IncomesFile :: saveIncomeToFile(Income income) {
     if (!fileExists) {
         incomesFile.AddElem("Incomes");
     }
-
     incomesFile.FindElem();
     incomesFile.IntoElem();
     incomesFile.AddElem ("Income");
@@ -66,5 +63,4 @@ void IncomesFile :: saveIncomeToFile(Income income) {
     incomesFile.AddElem( "Amount", AuxiliaryMethods :: convertDoubleToString (income.getAmount()) );
     incomesFile.Save( INCOMES_FILE_NAME );
     lastIncomeId++;
-
 }

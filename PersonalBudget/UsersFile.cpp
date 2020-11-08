@@ -27,7 +27,6 @@ vector <User> UsersFile :: loadUsersFromFile() {
     vector <User> users;
     CMarkup xml;
     xml.Load( usersFileName );
-    //xml.ResetPos();
 
     xml.FindElem(); // root Users element
     xml.IntoElem(); // inside Users
@@ -57,7 +56,6 @@ vector <User> UsersFile :: loadUsersFromFile() {
 void UsersFile :: saveAllUsersToFile(vector <User> &users) {
     CMarkup xml;
 
-
     xml.AddElem("Users");
     xml.FindElem();
     xml.IntoElem();
@@ -74,5 +72,4 @@ void UsersFile :: saveAllUsersToFile(vector <User> &users) {
         xml.Save (usersFileName);
         xml.OutOfElem();
     }
-
 }

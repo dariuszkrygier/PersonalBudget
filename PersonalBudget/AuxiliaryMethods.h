@@ -12,17 +12,13 @@
 
 using namespace std;
 
-class AuxiliaryMethods
-{
+class AuxiliaryMethods {
 public:
     static string convertIntToString(int number);
     static string loadLine();
     //static string zamienPierwszaLitereNaDuzaAPozostaleNaMale(string tekst);
     static int convertStringToInt(string number);
     static char loadChar();
-    //static int wczytajLiczbeCalkowita();
-    //static void usunPlik(string nazwaPlikuZRozszerzeniem);
-    //static void zmienNazwePliku(string staraNazwa, string nowaNazwa);
     static string setCurrentDateOfTheOperation();
     static string setUsersDateOfTheOperation();
     static bool checkTheFormatOfTheDate(int yearAsAnInteger, int monthAsAnInteger, int dayAsAnInteger);

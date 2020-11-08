@@ -46,34 +46,7 @@ char AuxiliaryMethods :: loadChar() {
     }
     return sign;
 }
-/*
-int AuxiliaryMethods :: wczytajLiczbeCalkowita() {
-    string wejscie = "";
-    int liczba = 0;
 
-    while (true) {
-        getline(cin, wejscie);
-
-        stringstream myStream(wejscie);
-        if (myStream >> liczba)
-            break;
-        cout << "To nie jest liczba. Wpisz ponownie. " << endl;
-    }
-    return liczba;
-}
-
-void AuxiliaryMethods :: usunPlik(string nazwaPlikuZRozszerzeniem) {
-    if (remove(nazwaPlikuZRozszerzeniem.c_str()) == 0) {}
-    else
-        cout << "Nie udalo sie usunac pliku " << nazwaPlikuZRozszerzeniem << endl;
-}
-
-void AuxiliaryMethods :: zmienNazwePliku(string staraNazwa, string nowaNazwa) {
-    if (rename(staraNazwa.c_str(), nowaNazwa.c_str()) == 0) {}
-    else
-        cout << "Nazwa pliku nie zostala zmieniona." << staraNazwa << endl;
-}
-*/
 
 string AuxiliaryMethods::setCurrentDateOfTheOperation() {
     time_t t = time(NULL);
@@ -184,21 +157,19 @@ string AuxiliaryMethods :: convertDoubleToString(double number) {
     return str;
 }
 
-double AuxiliaryMethods :: convertStringToDouble(string numberAsString)
-{
+double AuxiliaryMethods :: convertStringToDouble(string numberAsString) {
 
     stringstream ss;
-        double number;
-        ss << numberAsString;
-        ss >> number;
+    double number;
+    ss << numberAsString;
+    ss >> number;
 
     return number;
 }
 
-string AuxiliaryMethods :: removeChosenCharacterFromString (string dateAsString)
-{
-   dateAsString.erase(remove(dateAsString.begin(), dateAsString.end(), '-'), dateAsString.end()); //remove - from string
-   return dateAsString;
+string AuxiliaryMethods :: removeChosenCharacterFromString (string dateAsString) {
+    dateAsString.erase(remove(dateAsString.begin(), dateAsString.end(), '-'), dateAsString.end()); //remove - from string
+    return dateAsString;
 }
 
 int AuxiliaryMethods :: getCurrentYear() {
@@ -217,8 +188,7 @@ int AuxiliaryMethods :: getCurrentMonth() {
     return month;
 }
 
-int AuxiliaryMethods :: getYearFromOperationDate(string date)
-{
+int AuxiliaryMethods :: getYearFromOperationDate(string date) {
     string year = date.substr( 0, 4);
     int yearAsAnInteger;
     istringstream strYear(year);
@@ -227,8 +197,7 @@ int AuxiliaryMethods :: getYearFromOperationDate(string date)
     return yearAsAnInteger;
 }
 
-int AuxiliaryMethods :: getMonthFromOperationDate(string date)
-{
+int AuxiliaryMethods :: getMonthFromOperationDate(string date) {
     string month = date.substr( 5, 2);
     int monthAsAnInteger;
     istringstream strMonth(month);
@@ -236,5 +205,3 @@ int AuxiliaryMethods :: getMonthFromOperationDate(string date)
 
     return monthAsAnInteger;
 }
-
-

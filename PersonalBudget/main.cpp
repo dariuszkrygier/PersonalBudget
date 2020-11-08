@@ -9,13 +9,6 @@ char chooseOptionFromUsersMenu();
 
 int main() {
     PersonalBudget personalBudget("users.xml", "incomes.xml", "expenses.xml");
-    //userManager.registerUser();
-    //personalBudget.registerUser();
-    personalBudget.wypiszWszystkichUzytkownikow();
-    system("pause");
-    //personalBudget.loginUser();
-    //personalBudget.changePassword();
-    //personalBudget.addIncome();
 
     char choice;
     while(true) {
@@ -38,10 +31,10 @@ int main() {
             }
         } else {
             choice = chooseOptionFromUsersMenu();
-             switch (choice) {
-           case '1':
-             personalBudget.addIncome();
-              break;
+            switch (choice) {
+            case '1':
+                personalBudget.addIncome();
+                break;
             case '2':
                 personalBudget.addExpense();
                 break;
@@ -62,9 +55,6 @@ int main() {
                 break;
             }
         }
-
-
-
     }
     return 0;
 }
@@ -95,7 +85,7 @@ char chooseOptionFromUsersMenu() {
     cout << "2. Add expense" << endl;
     cout << "3. Show balance from current month" << endl;
     cout << "4. Show balance from previous month" << endl;
-    cout << "5. Show balance from selected period of time" << endl;
+    cout << "5. Show balance from chosen time period" << endl;
     cout << "--------------------------------------------" << endl;
     cout << "6. Change password" << endl;
     cout << "7. Log out" << endl;

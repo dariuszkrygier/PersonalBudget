@@ -3,7 +3,6 @@
 #include <iostream>
 #include <vector>
 #include <sstream>
-
 #include "Income.h"
 #include "Markup.h"
 #include "AuxiliaryMethods.h"

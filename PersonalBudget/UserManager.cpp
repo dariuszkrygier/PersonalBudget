@@ -5,7 +5,6 @@ void UserManager :: registerUser() {
     User user = specifyNewUserData();
 
     users.push_back(user);
-    //UsersFile usersFile;
 
     usersFile.saveUserToFile(user);
 
