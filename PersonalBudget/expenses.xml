@@ -20,4 +20,11 @@
 <Item>321</Item>
 <Amount>321</Amount>
 </Expense>
+<Expense>
+<ExpenseId>4</ExpenseId>
+<UserId>1</UserId>
+<Date>2020-10-11</Date>
+<Item>paliwo</Item>
+<Amount>195.666</Amount>
+</Expense>
 </Expenses>

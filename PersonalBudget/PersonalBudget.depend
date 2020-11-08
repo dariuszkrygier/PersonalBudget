@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1604855314 source:c:\users\dariusz krygier\documents\github\personalbudget\personalbudget\main.cpp
+1604857533 source:c:\users\dariusz krygier\documents\github\personalbudget\personalbudget\main.cpp
 	<iostream>
 	"PersonalBudget.h"
 	"AuxiliaryMethods.h"
@@ -10,7 +10,7 @@
 1604318769 c:\users\dariusz krygier\documents\github\personalbudget\personalbudget\user.h
 	<iostream>
 
-1604754012 source:c:\users\dariusz krygier\documents\github\personalbudget\personalbudget\auxiliarymethods.cpp
+1604855314 source:c:\users\dariusz krygier\documents\github\personalbudget\personalbudget\auxiliarymethods.cpp
 	"AuxiliaryMethods.h"
 	<sstream>
 
@@ -34,14 +34,14 @@
 	"User.h"
 	"UsersFile.h"
 
-1604318769 source:c:\users\dariusz krygier\documents\github\personalbudget\personalbudget\usermanager.cpp
+1604855447 source:c:\users\dariusz krygier\documents\github\personalbudget\personalbudget\usermanager.cpp
 	"UserManager.h"
 	"AuxiliaryMethods.h"
 
-1604748400 source:c:\users\dariusz krygier\documents\github\personalbudget\personalbudget\personalbudget.cpp
+1604858175 source:c:\users\dariusz krygier\documents\github\personalbudget\personalbudget\personalbudget.cpp
 	"PersonalBudget.h"
 
-1604855314 c:\users\dariusz krygier\documents\github\personalbudget\personalbudget\personalbudget.h
+1604857533 c:\users\dariusz krygier\documents\github\personalbudget\personalbudget\personalbudget.h
 	<iostream>
 	<vector>
 	<windows.h>
@@ -77,19 +77,19 @@
 1604610858 source:c:\users\dariusz krygier\documents\github\personalbudget\personalbudget\usersfile.cpp
 	"UsersFile.h"
 
-1604753451 source:c:\users\dariusz krygier\documents\github\personalbudget\personalbudget\expense.cpp
+1604855314 source:c:\users\dariusz krygier\documents\github\personalbudget\personalbudget\expense.cpp
 	"Expense.h"
 
-1604753386 source:c:\users\dariusz krygier\documents\github\personalbudget\personalbudget\income.cpp
+1604855314 source:c:\users\dariusz krygier\documents\github\personalbudget\personalbudget\income.cpp
 	"Income.h"
 
 1604855314 c:\users\dariusz krygier\documents\github\personalbudget\personalbudget\income.h
 	<iostream>
 
-1604753451 source:c:\users\dariusz krygier\documents\github\personalbudget\personalbudget\budgetmanager.cpp
+1604858146 source:c:\users\dariusz krygier\documents\github\personalbudget\personalbudget\budgetmanager.cpp
 	"BudgetManager.h"
 
-1604855314 c:\users\dariusz krygier\documents\github\personalbudget\personalbudget\budgetmanager.h
+1604858128 c:\users\dariusz krygier\documents\github\personalbudget\personalbudget\budgetmanager.h
 	<iostream>
 	<algorithm>
 	<iomanip>
@@ -111,7 +111,7 @@
 	"Markup.h"
 	"AuxiliaryMethods.h"
 
-1604854972 source:c:\users\dariusz krygier\documents\github\personalbudget\personalbudget\incomesfile.cpp
+1604855314 source:c:\users\dariusz krygier\documents\github\personalbudget\personalbudget\incomesfile.cpp
 	"IncomesFile.h"
 
 1604615893 c:\users\dariusz krygier\documents\github\personalbudget\personalbudget\expensesfile.h
@@ -122,6 +122,6 @@
 	"Markup.h"
 	"AuxiliaryMethods.h"
 
-1604854972 source:c:\users\dariusz krygier\documents\github\personalbudget\personalbudget\expensesfile.cpp
+1604855314 source:c:\users\dariusz krygier\documents\github\personalbudget\personalbudget\expensesfile.cpp
 	"ExpensesFile.h"
 

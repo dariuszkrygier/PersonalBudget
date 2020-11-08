@@ -48,9 +48,9 @@ int main() {
             case '3':
                 personalBudget.displayBalanceSheetFromCurrentMonth();
                 break;
-        //    case '4':
-          //      personalBudget.showBalanceFromThePreviousMonth();
-           //     break;
+            case '4':
+                personalBudget.displayBalanceSheetFromPreviousMonth();
+                break;
           //  case '5':
           //      personalBudget.showBalanceFromPeriod();
            //     break;

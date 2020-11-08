@@ -199,6 +199,94 @@ vector <Expense> BudgetManager :: loadExpensesFromCurrentMonth() {
     return expensesFromCurrentMonth;
 }
 
+void BudgetManager :: displayBalanceSheetFromPreviousMonth() {
+    setprecision (2);
+    vector <Income> incomesFromPreviousMonth;
+    vector <Income> sortedIncomesFromPreviousMonth;
+    system("cls");
+    incomesFromPreviousMonth = loadIncomesFromPreviousMonth();
+    sortedIncomesFromPreviousMonth = sortIncomesFromChosenTimePeriod(incomesFromPreviousMonth);
+    displayIncomesFromChosenTimePeriod(sortedIncomesFromPreviousMonth);
+    double totalIncomes;
+    totalIncomes = sumIncomes(incomesFromPreviousMonth);
+    cout << "---------------------------------------" << endl;
+    cout << "TOTAL INCOMES: " << totalIncomes << endl;
+    vector <Expense> expensesFromPreviousMonth;
+    vector <Expense> sortedExpensesFromPreviousMonth;
+    expensesFromPreviousMonth = loadExpensesFromPreviousMonth();
+    sortedExpensesFromPreviousMonth = sortExpensesFromChosenTimePeriod(expensesFromPreviousMonth);
+    displayExpensesFromChosenTimePeriod(sortedExpensesFromPreviousMonth);
+    double totalExpenses;
+    totalExpenses = sumExpenses(expensesFromPreviousMonth);
+    cout << "---------------------------------------" << endl;
+    cout << "TOTAL EXPENSES: " << totalExpenses << endl << endl;
+    double balanceFromPreviousMonth = sumIncomesAndExpenses(totalIncomes, totalExpenses);
+    cout << "---------------------------------------" << endl;
+    cout << "BALANCE FROM PREVIOUS MONTH: " << balanceFromPreviousMonth << endl;
+    cout << "---------------------------------------" << endl;
+    system("pause");
+}
+
+vector <Income> BudgetManager :: loadIncomesFromPreviousMonth() {
+    Income income;
+    vector <Income> incomesFromPreviousMonth;
+    int yearForPreviousMonth = AuxiliaryMethods :: getCurrentYear();
+    int currentMonth = AuxiliaryMethods :: getCurrentMonth();
+    int previousMonth;
+    if (currentMonth == 1) {
+        previousMonth = 12;
+        yearForPreviousMonth--;
+    } else {
+        previousMonth = currentMonth - 1;
+    }
+    vector <Income>::iterator itr = incomes.begin();
+    while (itr != incomes.end()) {
+        string date = itr -> getDate();
+        int yearFromUsersDate = AuxiliaryMethods :: getYearFromOperationDate(date);
+        int monthFromUsersDate = AuxiliaryMethods :: getMonthFromOperationDate(date);
+        if (yearFromUsersDate == yearForPreviousMonth && monthFromUsersDate == previousMonth) {
+            income.setIncomeId(itr -> getIncomeId());
+            income.setUserId(itr -> getUserId());
+            income.setDate(itr -> getDate());
+            income.setItem(itr -> getItem());
+            income.setAmount(itr -> getAmount());
+            incomesFromPreviousMonth.push_back(income);
+        }
+        itr++;
+    }
+    return incomesFromPreviousMonth;
+}
+
+vector <Expense> BudgetManager :: loadExpensesFromPreviousMonth() {
+    Expense expense;
+    vector <Expense> expensesFromPreviousMonth;
+    int yearForPreviousMonth = AuxiliaryMethods :: getCurrentYear();
+    int currentMonth = AuxiliaryMethods :: getCurrentMonth();
+    int previousMonth;
+    if (currentMonth == 1) {
+        previousMonth = 12;
+        yearForPreviousMonth--;
+    } else {
+        previousMonth = currentMonth - 1;
+    }
+    vector <Expense>::iterator itr = expenses.begin();
+    while (itr != expenses.end()) {
+        string date = itr -> getDate();
+        int yearFromUsersDate = AuxiliaryMethods :: getYearFromOperationDate(date);
+        int monthFromUsersDate = AuxiliaryMethods :: getMonthFromOperationDate(date);
+        if (yearFromUsersDate == yearForPreviousMonth && monthFromUsersDate == previousMonth) {
+            expense.setExpenseId(itr -> getExpenseId());
+            expense.setUserId(itr -> getUserId());
+            expense.setDate(itr -> getDate());
+            expense.setItem(itr -> getItem());
+            expense.setAmount(itr -> getAmount());
+            expensesFromPreviousMonth.push_back(expense);
+        }
+        itr++;
+    }
+    return expensesFromPreviousMonth;
+}
+
 vector <Income> BudgetManager :: sortIncomesFromChosenTimePeriod(vector <Income> incomes) {
     sort(incomes.begin(),incomes.end());
     return incomes;
@@ -253,4 +341,3 @@ bool operator < ( const Expense &e1, const Expense &e2) {
     return AuxiliaryMethods :: convertStringToInt (AuxiliaryMethods :: removeChosenCharacterFromString (e1.getConstDate()))
     < AuxiliaryMethods :: convertStringToInt (AuxiliaryMethods :: removeChosenCharacterFromString (e2.getConstDate()));
 }
-

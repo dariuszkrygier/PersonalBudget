@@ -34,4 +34,11 @@
 <Item>111,11</Item>
 <Amount>111.21</Amount>
 </Income>
+<Income>
+<IncomeId>6</IncomeId>
+<UserId>1</UserId>
+<Date>2020-10-25</Date>
+<Item>urodziny</Item>
+<Amount>2000.21</Amount>
+</Income>
 </Incomes>
