@@ -287,6 +287,94 @@ vector <Expense> BudgetManager :: loadExpensesFromPreviousMonth() {
     return expensesFromPreviousMonth;
 }
 
+void BudgetManager :: displayBalanceSheetFromChosenTimePeriod() {
+    setprecision (2);
+    vector <Income> incomesFromChosenTimePeriod;
+    vector <Expense> expensesFromChosenTimePeriod;
+    system("cls");
+    cout << "Start date for the balance" << endl;
+    string startDate = AuxiliaryMethods :: setUsersDateOfTheOperation();
+    cout << "End date for the balance: " << endl;
+    string endDate = AuxiliaryMethods :: setUsersDateOfTheOperation();
+    double totalIncomes;
+    double totalExpenses;
+    double balanceFromChosenTimePeriod;
+    incomesFromChosenTimePeriod = loadIncomesFromChosenTimePeriod(startDate, endDate);
+    expensesFromChosenTimePeriod = loadExpensesFromChosenTimePeriod(startDate, endDate);
+    if ((incomesFromChosenTimePeriod.empty() == false) || (expensesFromChosenTimePeriod.empty() == false)) {
+        system("cls");
+        vector <Income> sortedincomesFromChosenTimePeriod;
+        sortedincomesFromChosenTimePeriod = sortIncomesFromChosenTimePeriod(incomesFromChosenTimePeriod);
+        displayIncomesFromChosenTimePeriod(sortedincomesFromChosenTimePeriod);
+        totalIncomes = sumIncomes(incomesFromChosenTimePeriod);
+        cout << "---------------------------------------" << endl;
+        cout << "TOTAL INCOMES: " << totalIncomes << endl;
+        vector <Expense> sortedExpensesFromChosenTimePeriod;
+        sortedExpensesFromChosenTimePeriod = sortExpensesFromChosenTimePeriod(expensesFromChosenTimePeriod);
+        displayExpensesFromChosenTimePeriod(sortedExpensesFromChosenTimePeriod);
+        totalExpenses = sumExpenses(expensesFromChosenTimePeriod);
+        cout << "---------------------------------------" << endl;
+        cout << "TOTAL EXPENSES: " << totalExpenses << endl << endl;
+        balanceFromChosenTimePeriod = sumIncomesAndExpenses(totalIncomes, totalExpenses);
+        cout << "---------------------------------------" << endl;
+        cout << "BALANCE FROM CHOSEN TIME PERIOD: " << balanceFromChosenTimePeriod << endl;
+        cout << "---------------------------------------" << endl;
+        system("pause");
+    } else {
+        cout << "No data to display. Please check dates for selected period." << endl;
+        system("pause");
+    }
+}
+
+vector <Income> BudgetManager :: loadIncomesFromChosenTimePeriod (string startDate, string endDate) {
+    Income income;
+    vector <Income> incomesFromChosenTimePeriod;
+    int startDateAsInt = AuxiliaryMethods :: convertStringToInt (AuxiliaryMethods :: removeChosenCharacterFromString (startDate));
+    int endDateAsInt = AuxiliaryMethods :: convertStringToInt (AuxiliaryMethods :: removeChosenCharacterFromString (endDate));
+    if ((endDateAsInt-startDateAsInt)>=0) {
+        vector <Income>::iterator itr = incomes.begin();
+        while (itr != incomes.end()) {
+            string date = itr -> getDate();
+            int dateAsInt = AuxiliaryMethods :: convertStringToInt (AuxiliaryMethods :: removeChosenCharacterFromString (date));
+            if (dateAsInt >= startDateAsInt && dateAsInt <= endDateAsInt) {
+                income.setIncomeId(itr -> getIncomeId());
+                income.setUserId(itr -> getUserId());
+                income.setDate(itr -> getDate());
+                income.setItem(itr -> getItem());
+                income.setAmount(itr -> getAmount());
+                incomesFromChosenTimePeriod.push_back(income);
+            }
+            itr++;
+        }
+        return incomesFromChosenTimePeriod;
+    }
+}
+
+vector <Expense> BudgetManager :: loadExpensesFromChosenTimePeriod(string startDate, string endDate) {
+    Expense expense;
+    vector <Expense> expensesFromChosenTimePeriod;
+    int startDateAsInt = AuxiliaryMethods :: convertStringToInt (AuxiliaryMethods :: removeChosenCharacterFromString (startDate));
+    int endDateAsInt = AuxiliaryMethods :: convertStringToInt (AuxiliaryMethods :: removeChosenCharacterFromString (endDate));
+    if ((endDateAsInt-startDateAsInt)>=0) {
+        vector <Expense>::iterator itr = expenses.begin();
+        while (itr != expenses.end()) {
+            string date = itr -> getDate();
+            int dateAsInt = AuxiliaryMethods :: convertStringToInt (AuxiliaryMethods :: removeChosenCharacterFromString (date));
+            if (dateAsInt >= startDateAsInt && dateAsInt <= endDateAsInt) {
+                expense.setExpenseId(itr -> getExpenseId());
+                expense.setUserId(itr -> getUserId());
+                expense.setDate(itr -> getDate());
+                expense.setItem(itr -> getItem());
+                expense.setAmount(itr -> getAmount());
+                expensesFromChosenTimePeriod.push_back(expense);
+            }
+            itr++;
+        }
+        return expensesFromChosenTimePeriod;
+    }
+}
+
+
 vector <Income> BudgetManager :: sortIncomesFromChosenTimePeriod(vector <Income> incomes) {
     sort(incomes.begin(),incomes.end());
     return incomes;

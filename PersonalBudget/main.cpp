@@ -51,9 +51,9 @@ int main() {
             case '4':
                 personalBudget.displayBalanceSheetFromPreviousMonth();
                 break;
-          //  case '5':
-          //      personalBudget.showBalanceFromPeriod();
-           //     break;
+            case '5':
+                personalBudget.displayBalanceSheetFromChosenTimePeriod();
+                break;
             case '6':
                 personalBudget.changePassword();
                 break;
