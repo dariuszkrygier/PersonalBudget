@@ -1,16 +1,9 @@
 PersonalBudget/bin/
 PersonalBudget/obj/
 README.md
-displayCurrentDate.txt
-numberOfDaysInMonth.txt
-sortDates.txt
-PersonalBudget/convert double to string
-PersonalBudget/convert string to double
-PersonalBudget/nauka usuwanie znaków ze stringa
 PersonalBudget/incomes.xml
 PersonalBudget/users.xml
 PersonalBudget/expenses.xml
 PersonalBudget/PersonalBudget.cbp
 PersonalBudget/PersonalBudget.layout
-PersonalBudget/load income from current month
 PersonalBudget/PersonalBudget.depend
