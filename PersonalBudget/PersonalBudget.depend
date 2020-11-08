@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1604746878 source:c:\users\dariusz krygier\documents\github\personalbudget\personalbudget\main.cpp
+1604855314 source:c:\users\dariusz krygier\documents\github\personalbudget\personalbudget\main.cpp
 	<iostream>
 	"PersonalBudget.h"
 	"AuxiliaryMethods.h"
@@ -14,7 +14,7 @@
 	"AuxiliaryMethods.h"
 	<sstream>
 
-1604752554 c:\users\dariusz krygier\documents\github\personalbudget\personalbudget\auxiliarymethods.h
+1604855314 c:\users\dariusz krygier\documents\github\personalbudget\personalbudget\auxiliarymethods.h
 	<iostream>
 	<sstream>
 	<fstream>
@@ -41,7 +41,7 @@
 1604748400 source:c:\users\dariusz krygier\documents\github\personalbudget\personalbudget\personalbudget.cpp
 	"PersonalBudget.h"
 
-1604746878 c:\users\dariusz krygier\documents\github\personalbudget\personalbudget\personalbudget.h
+1604855314 c:\users\dariusz krygier\documents\github\personalbudget\personalbudget\personalbudget.h
 	<iostream>
 	<vector>
 	<windows.h>
@@ -83,13 +83,13 @@
 1604753386 source:c:\users\dariusz krygier\documents\github\personalbudget\personalbudget\income.cpp
 	"Income.h"
 
-1604753369 c:\users\dariusz krygier\documents\github\personalbudget\personalbudget\income.h
+1604855314 c:\users\dariusz krygier\documents\github\personalbudget\personalbudget\income.h
 	<iostream>
 
 1604753451 source:c:\users\dariusz krygier\documents\github\personalbudget\personalbudget\budgetmanager.cpp
 	"BudgetManager.h"
 
-1604746878 c:\users\dariusz krygier\documents\github\personalbudget\personalbudget\budgetmanager.h
+1604855314 c:\users\dariusz krygier\documents\github\personalbudget\personalbudget\budgetmanager.h
 	<iostream>
 	<algorithm>
 	<iomanip>
@@ -100,7 +100,7 @@
 	"AuxiliaryMethods.h"
 	<vector>
 
-1604753451 c:\users\dariusz krygier\documents\github\personalbudget\personalbudget\expense.h
+1604855314 c:\users\dariusz krygier\documents\github\personalbudget\personalbudget\expense.h
 	<iostream>
 
 1604610858 c:\users\dariusz krygier\documents\github\personalbudget\personalbudget\incomesfile.h

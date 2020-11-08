@@ -132,6 +132,7 @@ void UserManager :: logoutUser() {
         }
         cout<<"User: "<<itr->getLogin()<<", logged out."<<endl;
         loggedUserId=0;
+        system("pause");
     }
 }
 
