@@ -4,11 +4,13 @@ README.md
 displayCurrentDate.txt
 numberOfDaysInMonth.txt
 sortDates.txt
-convert double to string
-convert string to double
-nauka usuwanie znaków ze stringa
+convert double to string/
+convert string to double/
+nauka usuwanie znaków ze stringa/
 incomes.xml
 users.xml
 expenses.xml
 PersonalBudget.cbp
 PersonalBudget.layout
+load income from current month/
+PersonalBudget.depend
