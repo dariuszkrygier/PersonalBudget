@@ -25,7 +25,11 @@ public:
     string getDate();
     string getItem();
     double getAmount();
+    string getConstDate() const;
 
 };
+
+
+bool operator<(const Income &i1, const Income &i2);
 
 #endif

@@ -32,7 +32,9 @@ vector <Income> IncomesFile :: loadIncomesOfLoggedInUserFromFile(int loggedInUse
         double amount = AuxiliaryMethods :: convertStringToDouble(incomesFile.GetData());
         income.setAmount (amount);
         lastIncomeId++;
-        incomes.push_back(income);
+        if (loggedInUserId == income.getUserId()) {
+            incomes.push_back(income);
+        }
         incomesFile.OutOfElem();
     }
     return incomes;

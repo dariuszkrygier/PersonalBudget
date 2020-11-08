@@ -24,6 +24,19 @@ class BudgetManager {
     Income addDetailsOfTheIncome(string dateOfTheIcome);
     Expense addDetailsOfTheExpense(string dateOfTheExpense);
     double checkFormatAndChangeIntoDouble (string amount);
+    vector <Income> loadIncomesFromCurrentMonth();
+    vector <Income> loadIncomesFromPreviousMonth();
+    vector <Income> loadIncomesFromChosenTimePeriod(string startDate, string endDate);
+    vector <Expense> loadExpensesFromCurrentMonth();
+    vector <Expense> loadExpensesFromPreviousMonth();
+    vector <Expense> loadExpensesFromChosenTimePeriod(string startDate, string endDate);
+    vector <Income> sortIncomesFromChosenTimePeriod(vector <Income> incomes);
+    vector <Expense> sortExpensesFromChosenTimePeriod(vector <Expense> expenses);
+    void displayIncomesFromChosenTimePeriod(vector <Income> incomes);
+    void displayExpensesFromChosenTimePeriod(vector <Expense> expenses);
+    double sumIncomes (vector <Income> incomes);
+    double sumExpenses (vector <Expense> expenses);
+    double sumIncomesAndExpenses (double incomes, double expenses);
 
 
 public:

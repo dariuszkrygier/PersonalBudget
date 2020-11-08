@@ -25,7 +25,10 @@ public:
     string getDate();
     string getItem();
     double getAmount();
+    string getConstDate() const;
 
 };
+
+bool operator<(const Expense &e1, const Expense &e2);
 
 #endif

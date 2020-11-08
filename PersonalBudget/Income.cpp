@@ -32,3 +32,7 @@ string Income :: getItem() {
 double Income :: getAmount() {
     return amount;
 }
+
+string Income :: getConstDate() const {
+    return date;
+}

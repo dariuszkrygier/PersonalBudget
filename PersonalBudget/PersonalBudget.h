@@ -34,4 +34,5 @@ public:
     bool isUserLoggedIn();
     void addIncome();
     void addExpense();
+    void displayBalanceSheetFromCurrentMonth();
 };

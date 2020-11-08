@@ -45,9 +45,9 @@ int main() {
             case '2':
                 personalBudget.addExpense();
                 break;
-           // case '3':
-            //    personalBudget.showBalanceFromTheCurrentMonth();
-             //   break;
+            case '3':
+                personalBudget.displayBalanceSheetFromCurrentMonth();
+                break;
         //    case '4':
           //      personalBudget.showBalanceFromThePreviousMonth();
            //     break;

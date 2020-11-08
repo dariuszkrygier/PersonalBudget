@@ -22,15 +22,15 @@ string AuxiliaryMethods :: zamienPierwszaLitereNaDuzaAPozostaleNaMale(string tek
     }
     return tekst;
 }
-
-int AuxiliaryMethods :: konwersjaStringNaInt(string liczba) {
-    int liczbaInt;
-    istringstream iss(liczba);
-    iss >> liczbaInt;
-
-    return liczbaInt;
-}
 */
+int AuxiliaryMethods :: convertStringToInt(string number) {
+    int numberInt;
+    istringstream iss(number);
+    iss >> numberInt;
+
+    return numberInt;
+}
+
 char AuxiliaryMethods :: loadChar() {
     string input = "";
     char sign  = {0};
@@ -111,9 +111,71 @@ string AuxiliaryMethods :: setUsersDateOfTheOperation() {
         date = "0";
         return date;
     }
-
-    return date;
+    string year = date.substr( 0, 4);
+    int yearAsAnInteger;
+    istringstream strYear(year);
+    strYear >> yearAsAnInteger;
+    string month = date.substr( 5, 2);
+    int monthAsAnInteger;
+    istringstream strMonth(month);
+    strMonth >> monthAsAnInteger;
+    string day = date.substr( 8, 2);
+    int dayAsAnInteger;
+    istringstream strDay(day);
+    strDay >> dayAsAnInteger;
+    bool hasTheDateCorrectFormat = checkTheFormatOfTheDate(yearAsAnInteger, monthAsAnInteger, dayAsAnInteger);
+    if (hasTheDateCorrectFormat == true) {
+        return date;
+    } else {
+        date = "0";
+        return date;
+    }
 }
+bool AuxiliaryMethods::checkTheFormatOfTheDate(int yearAsAnInteger, int monthAsAnInteger, int dayAsAnInteger) {
+    bool hasTheDateCorrectFormat = true;
+    switch(monthAsAnInteger) {
+    case 1:
+    case 3:
+    case 5:
+    case 7:
+    case 8:
+    case 10:
+    case 12:
+        if (dayAsAnInteger < 1 || dayAsAnInteger > 31) {
+            hasTheDateCorrectFormat = false;
+            return hasTheDateCorrectFormat;
+        }
+        break;
+    case 4:
+    case 6:
+    case 9:
+    case 11:
+        if (dayAsAnInteger < 1 || dayAsAnInteger > 30) {
+            hasTheDateCorrectFormat = false;
+            return hasTheDateCorrectFormat;
+        }
+        break;
+    case 2:
+        if (((yearAsAnInteger%4 == 0) && (yearAsAnInteger%100 != 0)) || (yearAsAnInteger%400 == 0)) {
+            if (dayAsAnInteger < 1 || dayAsAnInteger > 29) {
+                hasTheDateCorrectFormat = false;
+                return hasTheDateCorrectFormat;
+            }
+        } else {
+            if (dayAsAnInteger < 1 || dayAsAnInteger > 28) {
+                hasTheDateCorrectFormat = false;
+                return hasTheDateCorrectFormat;
+            }
+        }
+        break;
+    }
+    if ((yearAsAnInteger < 2000) || (monthAsAnInteger < 1) || (monthAsAnInteger > 12)) {
+        hasTheDateCorrectFormat = false;
+        return hasTheDateCorrectFormat;
+    }
+    return hasTheDateCorrectFormat;
+}
+
 
 string AuxiliaryMethods :: convertDoubleToString(double number) {
     std::ostringstream strs;
@@ -132,3 +194,47 @@ double AuxiliaryMethods :: convertStringToDouble(string numberAsString)
 
     return number;
 }
+
+string AuxiliaryMethods :: removeChosenCharacterFromString (string dateAsString)
+{
+   dateAsString.erase(remove(dateAsString.begin(), dateAsString.end(), '-'), dateAsString.end()); //remove - from string
+   return dateAsString;
+}
+
+int AuxiliaryMethods :: getCurrentYear() {
+    SYSTEMTIME localTime;
+    GetLocalTime(&localTime);
+    int year = localTime.wYear;
+
+    return year;
+}
+
+int AuxiliaryMethods :: getCurrentMonth() {
+    SYSTEMTIME localTime;
+    GetLocalTime(&localTime);
+    int month = localTime.wMonth;
+
+    return month;
+}
+
+int AuxiliaryMethods :: getYearFromOperationDate(string date)
+{
+    string year = date.substr( 0, 4);
+    int yearAsAnInteger;
+    istringstream strYear(year);
+    strYear >> yearAsAnInteger;
+
+    return yearAsAnInteger;
+}
+
+int AuxiliaryMethods :: getMonthFromOperationDate(string date)
+{
+    string month = date.substr( 5, 2);
+    int monthAsAnInteger;
+    istringstream strMonth(month);
+    strMonth >> monthAsAnInteger;
+
+    return monthAsAnInteger;
+}
+
+

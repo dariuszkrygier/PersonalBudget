@@ -32,7 +32,9 @@ vector <Expense> ExpensesFile :: loadExpensesOfLoggedInUserFromFile(int loggedIn
         double amount = AuxiliaryMethods :: convertStringToDouble(expensesFile.GetData());
         expense.setAmount (amount);
         lastExpenseId++;
-        expenses.push_back(expense);
+        if (loggedInUserId == expense.getUserId()) {
+            expenses.push_back(expense);
+        }
         expensesFile.OutOfElem();
     }
     return expenses;

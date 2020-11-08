@@ -37,3 +37,7 @@
     {
         budgetManager -> addExpense();
     }
+    void PersonalBudget :: displayBalanceSheetFromCurrentMonth()
+    {
+        budgetManager -> displayBalanceSheetFromCurrentMonth();
+    }

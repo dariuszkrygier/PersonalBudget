@@ -32,3 +32,6 @@ string Expense :: getItem() {
 double Expense :: getAmount() {
     return amount;
 }
+string Expense :: getConstDate() const {
+    return date;
+}
